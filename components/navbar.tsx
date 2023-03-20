@@ -39,9 +39,9 @@ export default function Navbar() {
       </Link>
       <ul className="md:inline-flex hidden items-center gap-5 text-gray-500">
         <NavLink path="/">Home</NavLink>
-        <NavLink path="/monitoring">Monitoring</NavLink>
+        <NavLink path="/monitor">Monitoring</NavLink>
       </ul>
-      <NavbarMobile />
+      <NavbarMobile isScroll={isScroll} />
     </nav>
   );
 }

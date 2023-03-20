@@ -4,6 +4,7 @@ import Hero from "../public/hero.svg";
 import About from "../components/about";
 import Komponen from "../components/komponen";
 import Contact from "../components/contact";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +26,12 @@ const Home: NextPage = () => {
               IoT Smart Trashbin Based on Arduino Uno
             </p>
             <div className="flex items-center justify-center mt-6">
-              <button className="w-32 h-10 rounded-md bg-yellow-400 font-bold transition-colors duration-150 hover:bg-yellow-500">
+              <Link
+                href="/monitor"
+                className="w-32 h-10 flex items-center justify-center rounded-md bg-yellow-400 font-bold transition-colors duration-150 hover:bg-yellow-500"
+              >
                 Monitoring
-              </button>
+              </Link>
             </div>
           </article>
         </div>

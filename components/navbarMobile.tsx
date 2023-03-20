@@ -1,8 +1,13 @@
 import { BiChevronDown } from "react-icons/bi";
 import NavLink from "./navlink";
 import React from "react";
+import Link from "next/link";
 
-export default function NavbarMobile() {
+interface NavbarMobileProps {
+  isScroll: boolean;
+}
+
+export default function NavbarMobile({ isScroll }: NavbarMobileProps) {
   const [show, setShow] = React.useState(false);
 
   const toggleShow = React.useCallback(() => {
@@ -21,12 +26,26 @@ export default function NavbarMobile() {
         />
       </button>
       <div
-        className={`${
-          show ? "visible" : "invisible"
+        className={`${show ? "visible" : "invisible"} ${
+          isScroll ? "bg-white text-zinc-900" : "text-zinc-200"
         } absolute border-[1px] border-yellow-100 shadow-md rounded-md h-fit w-72 -right-5 p-4 flex flex-col gap-4`}
       >
-        <NavLink path="/">Home</NavLink>
-        <NavLink path="/monitoring">Monitoring</NavLink>
+        <Link
+          href="/"
+          onClick={() => {
+            setShow(false);
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          href="/monitor"
+          onClick={() => {
+            setShow(false);
+          }}
+        >
+          Monitoring
+        </Link>
       </div>
     </ul>
   );
