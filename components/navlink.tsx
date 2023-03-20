@@ -14,8 +14,8 @@ export default function NavLink({ path, children }: NavLinkProps) {
     <Link
       href={path}
       className={`${
-        router.pathname === path ? "text-gray-700" : ""
-      } transition hover:text-gray-700`}
+        router.pathname === path ? "text-zinc-100" : "text-zinc-300"
+      } transition hover:text-zinc-100`}
     >
       {children}
     </Link>

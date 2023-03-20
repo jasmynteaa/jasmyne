@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -16,7 +17,10 @@ export default function Layout({ children }: LayoutProps) {
       </Head>
 
       <Navbar />
-      <main>{children}</main>
+      <main className="w-full h-full max-w-full overflow-hidden">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 }
