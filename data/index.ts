@@ -12,7 +12,7 @@ export const components: DataProps[] = [
     id: 1,
     name: "Arduino Uno",
     image: {
-      src: "/../public/arduino.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369286/trash/arduino_ebblhg.png",
       alt: "Arduino Uno",
     },
   },
@@ -20,7 +20,7 @@ export const components: DataProps[] = [
     id: 2,
     name: "NodeMCU ESP8266",
     image: {
-      src: "/../public/mcu.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369289/trash/mcu_wa4ram.png",
       alt: "NodeMCU ESP8266",
     },
   },
@@ -28,7 +28,7 @@ export const components: DataProps[] = [
     id: 3,
     name: "Ultrasonik HCSR04",
     image: {
-      src: "/../public/sonic.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369290/trash/sonic_dnh6sf.png",
       alt: "Ultrasonik HCSR04",
     },
   },
@@ -36,7 +36,7 @@ export const components: DataProps[] = [
     id: 4,
     name: "Proximity Kapasitif",
     image: {
-      src: "/../public/proxi.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369287/trash/proxi_bmnzvd.png",
       alt: "Proximity Kapasitif",
     },
   },
@@ -44,7 +44,7 @@ export const components: DataProps[] = [
     id: 5,
     name: "Motor Servo",
     image: {
-      src: "/../public/servo.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369300/trash/servo_ikbp5f.png",
       alt: "Motor Servo",
     },
   },
@@ -52,7 +52,7 @@ export const components: DataProps[] = [
     id: 6,
     name: "Buzzer",
     image: {
-      src: "/../public/buzzer.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369286/trash/buzzer_ujifbi.png",
       alt: "Buzzer",
     },
   },
@@ -63,7 +63,7 @@ export const componentSupports: DataProps[] = [
     id: 1,
     name: "Breadboard",
     image: {
-      src: "/../public/board.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369287/trash/board_tqglmk.png",
       alt: "Breadboard",
     },
   },
@@ -71,7 +71,7 @@ export const componentSupports: DataProps[] = [
     id: 2,
     name: "Jumper Cable",
     image: {
-      src: "/../public/jumper.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369288/trash/jumper_gjjqrt.png",
       alt: "Jumper Cable",
     },
   },
@@ -79,7 +79,7 @@ export const componentSupports: DataProps[] = [
     id: 3,
     name: "Adaptor Cable",
     image: {
-      src: "/../public/adaptor.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369287/trash/adaptor_ngojbt.png",
       alt: "Adaptor Cable",
     },
   },
@@ -87,7 +87,7 @@ export const componentSupports: DataProps[] = [
     id: 4,
     name: "Power Supply",
     image: {
-      src: "/../public/supply.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369290/trash/supply_eyaduh.png",
       alt: "Power Supply",
     },
   },
@@ -95,7 +95,7 @@ export const componentSupports: DataProps[] = [
     id: 5,
     name: "Switch",
     image: {
-      src: "/../public/saklar.png",
+      src: "https://res.cloudinary.com/wikitro/image/upload/v1679369289/trash/saklar_sn5bau.png",
       alt: "Switch",
     },
   },

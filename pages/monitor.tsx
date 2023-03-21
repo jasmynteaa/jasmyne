@@ -7,7 +7,7 @@ export default function Monitor() {
       <div className="absolute w-full h-full left-0 top-0 bg-black/50"></div>
       <div className="bg-white w-full md:w-[700px] overflow-hidden relative md:h-[500px] h-80 rounded-md z-10">
         <Image
-          src="/../public/maps.png"
+          src="https://res.cloudinary.com/wikitro/image/upload/v1679369310/trash/maps_vfirsv.png"
           width={500}
           height={500}
           alt="maps"

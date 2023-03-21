@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Hero from "../public/hero.svg";
 import About from "../components/about";
 import Komponen from "../components/komponen";
 import Contact from "../components/contact";
@@ -11,7 +10,7 @@ const Home: NextPage = () => {
     <div>
       <section className="w-screen h-screen bg-yellow-100 flex items-center justify-center relative">
         <Image
-          src={Hero}
+          src="https://res.cloudinary.com/wikitro/image/upload/v1679369287/trash/hero_cat2da.svg"
           width={100}
           height={100}
           alt="Hero"
