@@ -1,7 +1,35 @@
 import Image from "next/image";
+<<<<<<< HEAD
 import { TbTrashFilled } from "react-icons/tb";
 
 export default function Monitor() {
+=======
+import { useEffect, useState } from "react";
+import { TbTrashFilled } from "react-icons/tb";
+
+export default function Monitor() {
+  const [organic, setOrganic] = useState<number>(0);
+  const [anorganic, setAnorganic] = useState<number>(0);
+  const [capacity, setCapacity] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/trash");
+        const jsonData = await response.json();
+        console.log(jsonData.data);
+        setOrganic(jsonData?.data?.organicCapacity);
+        setAnorganic(jsonData?.data?.anorganicCapacity);
+        setCapacity(organic + anorganic);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+  }, [organic, anorganic]);
+
+>>>>>>> 39e7e5c (fix)
   return (
     <div className="relative w-screen md:h-[92vh] h-screen bg-yellow-100 px-10 pt-20 md:px-32 gap-10 flex flex-col md:flex-row items-center justify-center">
       <div className="absolute w-full h-full left-0 top-0 bg-black/50"></div>
@@ -14,7 +42,20 @@ export default function Monitor() {
           className="w-full h-full object-cover"
         />
         <div className="absolute z-20 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+<<<<<<< HEAD
           <TbTrashFilled size={40} className="text-red-500" />
+=======
+          <TbTrashFilled
+            size={40}
+            className={`${
+              capacity < 50
+                ? "text-green-500"
+                : capacity > 50 && capacity < 100
+                ? "text-yellow-500"
+                : "text-red-500"
+            }`}
+          />
+>>>>>>> 39e7e5c (fix)
         </div>
       </div>
       <div className="bg-white p-3 w-full md:w-72 shadow-md overflow-hidden h-fit rounded-md z-10">
@@ -34,7 +75,11 @@ export default function Monitor() {
         </div>
         <div className="mt-2 flex items-center justify-center">
           <div className="border-4 border-black rounded-full w-32 h-32 flex items-center justify-center">
+<<<<<<< HEAD
             <h3 className="text-2xl font-semibold">72%</h3>
+=======
+            <h3 className="text-2xl font-semibold">{capacity ?? 0}%</h3>
+>>>>>>> 39e7e5c (fix)
           </div>
         </div>
         <div className="mt-4">
@@ -42,6 +87,7 @@ export default function Monitor() {
           <div className="flex flex-col gap-2 my-4">
             <div className="flex items-center justify-between">
               <h3>Organic</h3>
+<<<<<<< HEAD
               <div className="mx-2 text-sm flex items-center justify-center text-white overflow-hidden rounded-md">
                 <button className="shadow-xl shadow-green-500 bg-green-500 w-full p-1">
                   ON
@@ -55,6 +101,13 @@ export default function Monitor() {
                 <button className="bg-green-500 w-full p-1">ON</button>
                 <button className="w-full bg-red-500 p-1">OFF</button>
               </div>
+=======
+              <span>{organic}%</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <h3>Anorganic</h3>
+              <span>{anorganic}%</span>
+>>>>>>> 39e7e5c (fix)
             </div>
           </div>
         </div>
