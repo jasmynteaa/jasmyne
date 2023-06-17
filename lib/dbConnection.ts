@@ -1,15 +1,4 @@
-import mongoose, { connect } from "mongoose";
-
-declare global {
-  namespace NodeJS {
-    interface Global {
-      mongoose: {
-        conn: typeof mongoose | null;
-        promise: Promise<typeof mongoose> | null;
-      };
-    }
-  }
-}
+import mongoose, { ConnectOptions } from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -17,35 +6,18 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MongoDB URI in the .env file");
 }
 
-let cached = global.mongoose;
+const mongooseOptions: ConnectOptions = {
+  bufferCommands: false,
+};
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
-async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = connect(MONGODB_URI as string, opts).then((connection) => {
-      return connection;
-    });
-  }
-
+async function connectDB() {
   try {
-    cached.conn = await cached.promise;
-  } catch (err) {
-    cached.promise = null;
-    throw err;
+    await mongoose.connect(MONGODB_URI as string, mongooseOptions);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
+    process.exit(1);
   }
-
-  return cached.conn;
 }
 
-export default dbConnect;
+export default connectDB;
