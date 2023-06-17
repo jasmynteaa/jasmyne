@@ -17,11 +17,9 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MongoDB URI in the .env file");
 }
 
-// @ts-ignore
 let cached = global.mongoose;
 
 if (!cached) {
-  // @ts-ignore
   cached = global.mongoose = { conn: null, promise: null };
 }
 
@@ -35,8 +33,8 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = connect(MONGODB_URI as string, opts).then((mongoose) => {
-      return mongoose;
+    cached.promise = connect(MONGODB_URI as string, opts).then((connection) => {
+      return connection;
     });
   }
 
