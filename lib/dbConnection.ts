@@ -17,9 +17,11 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MongoDB URI in the .env file");
 }
 
+// @ts-ignore
 let cached = global.mongoose;
 
 if (!cached) {
+  // @ts-ignore
   cached = global.mongoose = { conn: null, promise: null };
 }
 
