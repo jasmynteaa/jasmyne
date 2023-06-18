@@ -22,13 +22,21 @@ export default async function handler(
     });
   } else if (req.method === "POST") {
     const body = req.body as UpdateTrashBody;
-    const trash = new TrashModel({
-      organicCapacity: body.organicCapacity,
-      anorganicCapacity: body.anorganicCapacity,
-    });
-    await trash.save();
-
-    res.status(201).json(trash.toJSON());
+    const findTrash = await TrashModel.find({}).sort({ _id: -1 }).exec();
+    if (!findTrash.length) {
+      const trash = new TrashModel({
+        organicCapacity: body.organicCapacity,
+        anorganicCapacity: body.anorganicCapacity,
+      });
+      await trash.save();
+      res.status(201).json(trash.toJSON());
+    } else {
+      const trash = findTrash[0];
+      trash.anorganicCapacity = body.anorganicCapacity;
+      trash.organicCapacity = body.organicCapacity;
+      await trash.save();
+      res.status(201).json(trash);
+    }
   } else {
     res.status(409).json({ error: "Method not allowed" });
   }

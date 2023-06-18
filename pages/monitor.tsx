@@ -39,9 +39,9 @@ export default function Monitor() {
           <TbTrashFilled
             size={40}
             className={`${
-              capacity < 50
+              capacity < 75
                 ? "text-green-500"
-                : capacity > 50 && capacity < 100
+                : capacity >= 75 && capacity < 100
                 ? "text-yellow-500"
                 : "text-red-500"
             }`}
